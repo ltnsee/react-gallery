@@ -5,7 +5,6 @@ html,body {
 
   background: #222;
 }
-
 .content{
   width: 100%;
   height: 100%;
@@ -29,6 +28,7 @@ html,body {
   overflow: hidden;
 
   background-color: #ddd;
+  perspective: 1800px;
 }
 .img-figure{
   position: absolute;
@@ -41,14 +41,16 @@ html,body {
   box-sizing: border-box;
   background-color: #fff;
 
-  transform-style: preserve-3d; 
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out, left 0.6s ease-in-out, top 0.6s ease-in-out;
+  transform-origin: 0 50% 0; 
 }
 .img-figure img{
   width: 240px;
   height: 240px;
 }
 .is-inverse{
-  transform: rotateY(180deg);
+  transform: translate(320px) rotateY(180deg);
 }
 figcaption{
   text-align: center;
@@ -85,6 +87,53 @@ figcaption .img-back{
   width: 100%;
 
   text-align: center;
+}
+.controller-unit{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
 
+  text-align: center;
+  cursor: pointer;
+  background-color: #aaa;
+  border-radius: 50%;
+  transform: scale(0.5);
+}
+
+.controller-unit{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #aaa;
+  border-radius: 50%;
+
+  transform: scale(0.5);
+  transition: transform 0.6 ease-in-out, backgroud-color 0.3;
+}
+.controller-unit.is-center{
+  border-color: #888;
+
+  transform: scale(1);
+}
+.controller-unit.is-center::after{
+  font-family: "iconfont";
+  color: #fff;
+  font-size: 18px;
+  line-height: 30px;
+  content: "\e6b4";
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.controller-unit.is-inverse{
+  background-color: #555;
+
+  transform: rotateY(180deg);
 }
 /* controller -- end */

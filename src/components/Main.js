@@ -93,6 +93,24 @@ class ImgFigure extends React.Component {
   }
 }
 
+class ControllerUnit extends React.Component{
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e){
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  render() {
+    return (
+      <span className="controller-unit" onClick={this.handleClick}></span>
+    );
+  }
+}
+
 class AppComponent extends React.Component {
 
 
@@ -279,9 +297,10 @@ class AppComponent extends React.Component {
   }
 
   render() {
+    let ImgFigures = [];
     let controllerUnits = [];
 
-    let ImgFigures = imageDatas.map(((value, index) => {
+    imageDatas.forEach(((value, index) => {
       if (!this.state.imgsArrangeArr[index]) {
         this.state.imgsArrangeArr[index] = {
           pos: {
@@ -293,10 +312,11 @@ class AppComponent extends React.Component {
           isCenter: false
         }
       }
-      return <ImgFigure key={index} data={value} ref={'ImgFigure' + index} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)} />
+      ImgFigures.push(<ImgFigure key={index} data={value} ref={'ImgFigure' + index} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)} />);
+
+      controllerUnits.push(<ControllerUnit key={index} />);
+
     }).bind(this));
-
-
 
     return (
       <section className="stage" ref="stage">
