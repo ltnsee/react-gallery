@@ -1,0 +1,21 @@
+react编写画廊
+
+1.安装
+//Yeoman
+    npm install -g yo//安装
+    
+//ReactJS的 Yeoman生成器- 让您快速建立包括karma测试运行器和Webpack模块系统的项目。
+    npm install -g generator-react-webpack
+
+
+
+npm ls -g --depth-1 2>/dev/null | grep generator-//查看全局安装包的情况
+npm ls -g //列出全局安装的所有npm包，应为npm包是相互依赖的，会以树状来呈现；
+npm ls -g --depth=1 //限制树状结构只向下展示一层
+>2>/dev/null //过滤一些错误消息
+|//通道，将上一个文件的输出内容作为下一个文件的输入内容
+grep generator- //在输出结果中检索 generator- 开头的文件
+
+
+
+
