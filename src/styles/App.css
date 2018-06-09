@@ -131,9 +131,17 @@ figcaption .img-back p{
 }
 .controller-unit.is-center{
   border-color: #888;
+  color: #fff;
+  font-size: 18px;
+  line-height: 30px;
+  /* 使图标抗锯齿 */
+  -webkit-font-smoothing: antialiased;
+  /* 使图标更清晰 */
+  -moz-osx-font-smoothing: grayscale;
 
   transform: scale(1);
 }
+/* 教程写法
 .controller-unit.is-center::after{
   font-family: "iconfont";
   color: #fff;
@@ -143,7 +151,7 @@ figcaption .img-back p{
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 .controller-unit.is-inverse{
   background-color: #555;
 
